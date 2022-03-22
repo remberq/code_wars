@@ -196,23 +196,6 @@ def find_missing_letter(chars):
 
 
 """
-Write a function that when given a URL as a string, 
-parses out just the domain name and returns it as a string. For example:
-
-domain_name("http://github.com/carbonfive/raygun") == "github" 
-domain_name("http://www.zombie-bites.com") == "zombie-bites"
-domain_name("https://www.cnet.com") == "cnet"
-"""
-
-# def domain_name(url):
-#     import re
-#     x = re.split('//', url)
-#     return x
-#
-# print(domain_name("http://github.com/carbonfive/raygun"))
-
-
-"""
 It's pretty straightforward. Your goal is to create a function that removes the first and last characters of a string.
 You're given one parameter, the original string. 
 You don't have to worry with strings with less than two characters.
