@@ -501,3 +501,114 @@ Note that 121 has twice the digit 1.
 
 def nb_dig(n, d):
     return sum(str(i * i).count(str(d)) for i in range(n + 1))
+
+
+"""
+Ask a small girl - "How old are you?". 
+She always says strange things... Lets help her!
+
+For correct answer program should return int from 0 to 9.
+
+Assume test input string always valid and 
+may look like "1 year old" or "5 years old", etc.. The first char is number only
+"""
+
+
+def get_age(age):
+    return int(age[0])
+
+
+"""
+Given a string, swap the case for each of the letters.
+
+e.g. CodEwArs --> cODeWaRS
+
+Examples
+""           ->   ""
+"CodeWars"   ->   "cODEwARS"
+"abc"        ->   "ABC"
+"ABC"        ->   "abc"
+"123235"     ->   "123235"
+"""
+
+
+def swap(string_):
+    x = ''
+    for i in string_:
+        if i.isupper():
+            x += i.lower()
+        else:
+            x += i.upper()
+    return x
+
+
+"""
+Create the function that converts a given string into an md5 hash. 
+The return value should be encoded in hexadecimal.
+
+Code Examples
+passHash("password") // --> "5f4dcc3b5aa765d61d8327deb882cf99"
+passHash("abc123") // --> "e99a18c428cb38d5f260853678922e03"
+"""
+
+
+def pass_hash(str):
+    import hashlib
+    return hashlib.md5(str.encode()).hexdigest()
+
+
+"""
+Modify the spacify function so that it returns the given string 
+with spaces inserted between each character.
+
+spacify("hello world") # returns "h e l l o   w o r l d"
+"""
+
+
+def spacify(string):
+    return ' '.join(string)
+
+
+"""
+Take 2 strings s1 and s2 including only letters from ato z. 
+Return a new sorted string, the longest possible, containing distinct letters -
+each taken only once - coming from s1 or s2.
+"""
+
+
+def longest(a1, a2):
+    return ''.join(sorted(set(a1 + a2)))
+
+
+"""
+Description
+Frank just bought a new calculator. But, this is no normal calculator. 
+This is a 'Sticky Calculator.
+
+Whenever you add add, subtract, multiply or 
+divide two numbers the two numbers first stick together:
+
+For instance:
+
+50 + 12 becomes 5012
+and then the operation is carried out as usual:
+
+(5012) + 12 = 5024
+Task
+It is your job to create a function which takes 3 parameters:
+
+stickyCalc(operation, val1, val2)
+which works just like Frank's sticky calculator
+
+Some Examples
+stickyCalc('+', 50, 12)     // Output: (5012 + 12) = 5024
+stickyCalc('-', 7, 5)       // Output: (75 - 5) = 70
+stickyCalc('*', 13, 20)     // Output: (1320 * 20 ) = 26400
+stickyCalc('/', 10, 10)     // Output: (1010 / 10) = 101
+"""
+
+
+def sticky_calc(operation, val1, val2):
+    first_num = str(round(val1)) + str(round(val2))
+    result = f'{first_num} {operation} {str(round(val2))}'
+    return round(eval(result))
